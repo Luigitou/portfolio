@@ -3,7 +3,7 @@ import { parisienne } from '@/assets';
 
 export function Signature() {
     return (
-        <div className={classNames('')}>
+        <div className={classNames('cursor-default')}>
             <span
                 className={classNames(
                     parisienne.className,

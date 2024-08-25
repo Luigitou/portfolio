@@ -1,7 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
-import { jost } from '@/assets';
+import { config, jost } from '@/assets';
 
 export function AvailableForWork() {
     return (
@@ -11,28 +11,19 @@ export function AvailableForWork() {
                 jost.className
             )}
         >
-            <button
+            <a
                 className={
                     'flex items-center justify-center gap-3 rounded-full border-2 border-white bg-white bg-opacity-10 px-8 py-2'
                 }
-                onClick={() => {
-                    // redirect to linkedin profile
-                    console.log(
-                        process.env.NEXT_PUBLIC_AVAILABLE_FOR_WORK_REDIRECT_URI
-                    );
-                    if (
-                        process.env.NEXT_PUBLIC_AVAILABLE_FOR_WORK_REDIRECT_URI
-                    ) {
-                        window.location.href =
-                            process.env.NEXT_PUBLIC_AVAILABLE_FOR_WORK_REDIRECT_URI;
-                    }
-                }}
+                href={config.AVAILABLE_FOR_WORK_REDIRECT_URI}
+                target="_blank"
+                rel="noopener noreferrer"
             >
                 <span
                     className={'aspect-square w-3 rounded-full bg-green'}
                 ></span>
                 <h2>Available for work</h2>
-            </button>
+            </a>
         </div>
     );
 }

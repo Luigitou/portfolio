@@ -1,0 +1,20 @@
+{
+  "AVAILABLE_FOR_WORK_REDIRECT_URI": "https://www.linkedin.com/in/louis-bellefemine/",
+  "SOCIALS": [
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/louis-bellefemine/",
+      "icon": "/linkedin.svg"
+    },
+    {
+      "name": "Malt",
+      "url": "https://www.malt.fr/profile/louisbellefemine?overview",
+      "icon": "/malt.svg"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/Luigitou",
+      "icon": "/github.svg"
+    }
+  ]
+}
