@@ -16,13 +16,18 @@ export function AvailableForWork() {
                     'flex items-center justify-center gap-3 rounded-full border-2 border-white bg-white bg-opacity-10 px-8 py-2'
                 }
                 href={config.AVAILABLE_FOR_WORK_REDIRECT_URI}
-                target="_blank"
-                rel="noopener noreferrer"
             >
                 <span
-                    className={'aspect-square w-3 rounded-full bg-green'}
+                    className={classNames(
+                        'aspect-square w-3 rounded-full',
+                        config.AVAILABLE_FOR_WORK ? 'bg-green' : 'bg-red-500'
+                    )}
                 ></span>
-                <h2>Available for work</h2>
+                <h2>
+                    {config.AVAILABLE_FOR_WORK
+                        ? 'Available for work ! '
+                        : 'Working for someone, somewhere !'}
+                </h2>
             </a>
         </div>
     );

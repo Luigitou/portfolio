@@ -27,14 +27,14 @@ export function Nav() {
 const pages = [
     {
         title: 'HOME',
-        href: '#home'
+        href: '/#home'
     },
     {
         title: 'WORK',
-        href: '#work'
+        href: '/#work'
     },
     {
         title: 'ABOUT',
-        href: '#about'
+        href: '/#about'
     }
 ];

@@ -1,5 +1,6 @@
 {
-  "AVAILABLE_FOR_WORK_REDIRECT_URI": "https://www.linkedin.com/in/louis-bellefemine/",
+  "AVAILABLE_FOR_WORK": true,
+  "AVAILABLE_FOR_WORK_REDIRECT_URI": "/contact",
   "SOCIALS": [
     {
       "name": "LinkedIn",
