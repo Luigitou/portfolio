@@ -16,5 +16,27 @@
       "url": "https://github.com/Luigitou",
       "icon": "/github.svg"
     }
+  ],
+  "PROJECTS": [
+    {
+      "name": "Kusodu",
+      "description": "A modern multiplayer sudoku",
+      "techs": [
+        {
+          "name": "Next.js",
+          "icon": "/nextjs.svg"
+        },
+        {
+          "name": "TypeScript",
+          "icon": "/typescript.svg"
+        },
+        {
+          "name": "Tailwind CSS",
+          "icon": "/tailwindcss.svg"
+        }
+      ],
+      "image": "",
+      "url": ""
+    }
   ]
 }

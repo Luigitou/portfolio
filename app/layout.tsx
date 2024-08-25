@@ -30,7 +30,7 @@ export default function RootLayout({
             >
                 <div
                     className={
-                        'absolute left-1/2 top-1/2 aspect-video w-6/12 transform' +
+                        'fixed left-1/2 top-1/2 aspect-video w-6/12 transform' +
                         ' -z-50 -translate-x-1/2 -translate-y-1/2 opacity-10'
                     }
                 >
@@ -38,7 +38,7 @@ export default function RootLayout({
                 </div>
                 <header
                     className={classNames(
-                        'flex w-full grow-0 items-center justify-between px-6 py-4'
+                        'fixed top-0 flex w-full grow-0 items-center justify-between px-6 py-4'
                     )}
                 >
                     <Signature />

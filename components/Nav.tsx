@@ -5,7 +5,7 @@ export function Nav() {
     return (
         <div
             className={classNames(
-                'flex h-3/4 w-20 flex-col items-center justify-center gap-32 border-l-[1px] border-white border-opacity-50 text-sm text-white',
+                'top-1/8 fixed right-0 flex h-3/4 w-20 flex-col items-center justify-center gap-32 border-l-[1px] border-white border-opacity-50 text-sm text-white',
                 jost.className
             )}
         >

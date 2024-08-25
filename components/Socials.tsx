@@ -5,7 +5,11 @@ export function Socials() {
     const socials = config.SOCIALS;
 
     return (
-        <div className={'flex flex-col gap-12'}>
+        <div
+            className={
+                'fixed top-0 flex h-full flex-col items-center justify-center gap-12'
+            }
+        >
             {socials.map((social, index) => (
                 <a
                     key={index}
