@@ -10,7 +10,7 @@ export function Landing() {
                 <h1
                     className={
                         'relative text-8xl font-black ' +
-                        'after:absolute after:left-full after:top-1/2 after:h-[2px] after:w-16 after:bg-white after:opacity-50 after:content-[""]'
+                        'after:absolute after:left-full after:top-1/2 after:h-[2px] after:w-12 after:bg-white after:opacity-50 after:content-[""]'
                     }
                 >
                     LOUIS BELLEFEMINE.

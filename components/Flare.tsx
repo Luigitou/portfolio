@@ -10,7 +10,8 @@ export function Flare() {
             { path: '#base' },
             { path: '#move' },
             {
-                duration: 2000,
+                duration: 1500,
+                easing: 'easingCubicInOut',
                 repeat: 9999999,
                 yoyo: true
             }

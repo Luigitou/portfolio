@@ -1,5 +1,6 @@
 import { config } from '@/assets';
 import classNames from 'classnames';
+import Image from 'next/image';
 
 export function Work() {
     return (
@@ -7,7 +8,9 @@ export function Work() {
             {config.PROJECTS.map((project, index) => (
                 <section
                     key={index}
-                    className={'flex h-full w-6/12 flex-col justify-center'}
+                    className={
+                        'flex h-full w-6/12 flex-col justify-center gap-2'
+                    }
                 >
                     <span className={'flex items-end justify-between'}>
                         <a
@@ -30,6 +33,36 @@ export function Work() {
                             {project.description}
                         </p>
                     </span>
+                    <div
+                        className={
+                            'aspect-video w-full rounded-xl bg-amber-50 opacity-50'
+                        }
+                    ></div>
+                    <div
+                        className={
+                            'mt-5 flex items-center justify-center gap-4'
+                        }
+                    >
+                        {project.techs.map((tech, index) => {
+                            return (
+                                <span
+                                    key={index}
+                                    className={
+                                        'flex items-center justify-center gap-2 rounded-full bg-white bg-opacity-10 px-3 py-1 text-sm'
+                                    }
+                                >
+                                    <Image
+                                        src={tech.icon}
+                                        alt={`${tech.name} icon`}
+                                        width={'25'}
+                                        height={40}
+                                    />
+                                    {tech.name}
+                                </span>
+                            );
+                        })}
+                    </div>
+                    <div></div>
                 </section>
             ))}
         </>
