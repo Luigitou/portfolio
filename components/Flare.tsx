@@ -4,18 +4,20 @@ import { useEffect } from 'react';
 import KUTE from 'kute.js';
 
 export function Flare() {
+    // add a scale effect to the flare
     useEffect(() => {
         const tween = KUTE.fromTo(
             '#base',
             { path: '#base' },
             { path: '#move' },
             {
-                duration: 1500,
+                duration: 1000,
                 easing: 'easingCubicInOut',
                 repeat: 9999999,
                 yoyo: true
             }
         );
+
         tween.start();
     }, []);
 

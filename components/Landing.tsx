@@ -22,16 +22,18 @@ export function Landing() {
 
             <aside className={'flex items-center justify-center gap-20'}>
                 <Image
-                    src={'/stormshield.jpg'}
+                    src={'/stormshield.webp'}
                     alt={'Stormshield Logo'}
                     width={200}
                     height={100}
+                    className={'opacity-50'}
                 />
                 <Image
                     src={'/mercedes.png'}
                     alt={'Mercedes Benz Logo'}
                     width={200}
                     height={100}
+                    className={'opacity-20'}
                 />
             </aside>
         </>
