@@ -1,43 +1,69 @@
 {
-  "AVAILABLE_FOR_WORK": true,
-  "AVAILABLE_FOR_WORK_REDIRECT_URI": "/contact",
-  "SOCIALS": [
-    {
-      "name": "LinkedIn",
-      "url": "https://www.linkedin.com/in/louis-bellefemine/",
-      "icon": "/linkedin.svg"
-    },
-    {
-      "name": "Malt",
-      "url": "https://www.malt.fr/profile/louisbellefemine?overview",
-      "icon": "/malt.svg"
-    },
-    {
-      "name": "GitHub",
-      "url": "https://github.com/Luigitou",
-      "icon": "/github.svg"
-    }
-  ],
-  "PROJECTS": [
-    {
-      "name": "Kusodu",
-      "description": "A modern multiplayer sudoku",
-      "techs": [
+    "AVAILABLE_FOR_WORK": true,
+    "AVAILABLE_FOR_WORK_REDIRECT_URI": "/contact",
+    "SOCIALS": [
         {
-          "name": "Next.js",
-          "icon": "/nextjs.svg"
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/louis-bellefemine/",
+            "icon": "/linkedin.svg"
         },
         {
-          "name": "TypeScript",
-          "icon": "/typescript.svg"
+            "name": "Malt",
+            "url": "https://www.malt.fr/profile/louisbellefemine?overview",
+            "icon": "/malt.svg"
         },
         {
-          "name": "Tailwind CSS",
-          "icon": "/tailwindcss.svg"
+            "name": "GitHub",
+            "url": "https://github.com/Luigitou",
+            "icon": "/github.svg"
         }
-      ],
-      "image": "",
-      "url": ""
-    }
-  ]
+    ],
+    "PROJECTS": [
+        {
+            "name": "Kusodu",
+            "description": "A modern multiplayer sudoku",
+            "techs": [
+                {
+                    "name": "Next.js",
+                    "icon": "/nextjs.svg",
+                    "url": "https://nextjs.org/"
+                },
+                {
+                    "name": "TypeScript",
+                    "icon": "/typescript.svg",
+                    "url": "https://www.typescriptlang.org/"
+                },
+                {
+                    "name": "Tailwind CSS",
+                    "icon": "/tailwindcss.svg",
+                    "url": "https://tailwindcss.com/"
+                }
+            ],
+            "image": "",
+            "url": ""
+        },
+        {
+            "name": "Next.js",
+            "description": "A modern multiplayer sudoku",
+            "techs": [
+                {
+                    "name": "Next.js",
+                    "icon": "/nextjs.svg",
+                    "url": "https://nextjs.org/"
+                },
+                {
+                    "name": "TypeScript",
+                    "icon": "/typescript.svg",
+                    "url": "https://www.typescriptlang.org/"
+                },
+                {
+                    "name": "Tailwind CSS",
+                    "icon": "/tailwindcss.svg",
+                    "url": "https://tailwindcss.com/"
+                }
+            ],
+            "image": "",
+            "url": ""
+        }
+    ]
 }
