@@ -51,7 +51,7 @@ export function Work() {
                                             'flex items-end justify-between gap-3'
                                         }
                                     >
-                                        <h1
+                                        <h2
                                             className={classNames(
                                                 'relative text-4xl font-black hover:after:w-3/4 hover:after:opacity-100 ' +
                                                     'after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-1/4 after:bg-white after:opacity-50 after:content-[""]' +
@@ -59,7 +59,7 @@ export function Work() {
                                             )}
                                         >
                                             {project.name}.
-                                        </h1>
+                                        </h2>
                                     </a>
                                     <p className={'text-xl italic'}>
                                         {project.description}
