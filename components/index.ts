@@ -7,3 +7,4 @@ export { Landing } from './Landing';
 export { Work } from './Work';
 export { About } from './About';
 export { Contact } from './Contact';
+export { MousePointer } from './MousePointer';

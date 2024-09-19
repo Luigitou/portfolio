@@ -184,7 +184,7 @@ export function Work() {
                         'left-50 absolute bottom-6 flex items-center justify-center'
                     }
                 >
-                    <span
+                    <button
                         className={
                             'cursor-pointer opacity-50 transition-opacity duration-150 ease-in hover:opacity-100'
                         }
@@ -196,7 +196,7 @@ export function Work() {
                             width={70}
                             height={50}
                         />
-                    </span>
+                    </button>
                     <div
                         className={
                             'flex w-1/2 items-center justify-center gap-[35px]'
@@ -204,7 +204,7 @@ export function Work() {
                     >
                         {config.PROJECTS.map((project, index) => {
                             return (
-                                <span
+                                <button
                                     key={index}
                                     className={classNames(
                                         'aspect-square h-3 rounded-full border-[1px] border-white',
@@ -219,11 +219,11 @@ export function Work() {
                                     onClick={() => {
                                         setActiveProject(index);
                                     }}
-                                ></span>
+                                ></button>
                             );
                         })}
                     </div>
-                    <span
+                    <button
                         className={
                             'cursor-pointer opacity-50 transition-opacity duration-150 ease-in hover:opacity-100'
                         }
@@ -236,7 +236,7 @@ export function Work() {
                             height={50}
                             className={'rotate-180'}
                         />
-                    </span>
+                    </button>
                 </div>
             </div>
         </>

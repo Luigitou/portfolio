@@ -1,7 +1,14 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import classNames from 'classnames';
-import { AvailableForWork, Flare, Nav, Signature, Socials } from '@/components';
+import {
+    AvailableForWork,
+    Flare,
+    MousePointer,
+    Nav,
+    Signature,
+    Socials
+} from '@/components';
 import { jost } from '@/assets';
 
 export const metadata: Metadata = {
@@ -50,6 +57,7 @@ export default function RootLayout({
                     {children}
                     <Nav />
                 </div>
+                <MousePointer />
             </body>
         </html>
     );
