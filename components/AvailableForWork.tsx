@@ -7,7 +7,7 @@ export function AvailableForWork() {
     return (
         <div
             className={classNames(
-                'flex w-full items-center justify-center text-white',
+                'z-50 flex w-full items-center justify-center text-white',
                 jost.className
             )}
         >

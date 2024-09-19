@@ -3,11 +3,19 @@
 import classNames from 'classnames';
 import { jost } from '@/assets';
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 export function Nav() {
     const [activeSection, setActiveSection] = useState<string | null>(null);
+    const currentPath = usePathname();
 
     const handleScroll = (href: string) => {
+        if (currentPath === '/contact') {
+            // redirect to home page if not on home page
+            window.location.href = href;
+            return;
+        }
+
         const element = document.getElementById(href.slice(2));
         if (element) {
             element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -43,7 +51,7 @@ export function Nav() {
     };
 
     useEffect(() => {
-        const activeSection = getActiveSection();
+        getActiveSection();
     }, []);
 
     return (
@@ -58,12 +66,12 @@ export function Nav() {
                     key={page.href}
                     onClick={() => handleScroll(page.href)}
                     className={classNames(
-                        'rotate-90 cursor-pointer opacity-50 transition-opacity duration-150 hover:opacity-100 hover:after:w-3/4 hover:after:opacity-100 ' +
+                        'rotate-90 cursor-pointer transition-opacity duration-150 hover:opacity-100 hover:after:w-3/4 hover:after:opacity-100 ' +
                             'after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-1/4 after:bg-white after:opacity-50 after:content-[""]' +
-                            'after:transition-all after:duration-300 after:ease-in-out',
+                            ' after:transition-all after:duration-300 after:ease-in-out',
                         activeSection === page.title.toLowerCase()
                             ? 'opacity-100'
-                            : ''
+                            : 'opacity-50'
                     )}
                 >
                     {page.title}

@@ -39,7 +39,7 @@ export default function RootLayout({
                 </div>
                 <header
                     className={classNames(
-                        'fixed top-0 flex w-full grow-0 items-center justify-between px-6 py-4'
+                        'fixed top-0 z-50 flex w-full grow-0 items-center justify-between bg-opacity-0 px-6 py-4 backdrop-blur'
                     )}
                 >
                     <Signature />
