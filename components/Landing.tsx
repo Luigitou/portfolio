@@ -16,7 +16,7 @@ export function Landing() {
                     LOUIS BELLEFEMINE.
                 </h1>
                 <h2 className={'pl-32 text-4xl italic'}>
-                    Freelance Front-End Developer
+                    Freelance FullStack Developer
                 </h2>
             </section>
 

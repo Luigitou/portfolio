@@ -9,6 +9,7 @@ export default function Home() {
                 jost.className,
                 'h-screen w-screen text-white'
             )}
+            id={'auto-scroll'}
         >
             <article
                 id={'home'}
