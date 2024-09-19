@@ -40,19 +40,14 @@
           "url": "https://tailwindcss.com/"
         }
       ],
-      "image": "",
+      "image": "/bg-1.jpg",
       "url": ""
     },
     {
       "name": "Next.js",
-      "description": "A modern multiplayer sudoku",
-      "online": false,
+      "description": "A basic Next.js app",
+      "online": true,
       "techs": [
-        {
-          "name": "Next.js",
-          "icon": "/nextjs.svg",
-          "url": "https://nextjs.org/"
-        },
         {
           "name": "TypeScript",
           "icon": "/typescript.svg",
@@ -64,7 +59,7 @@
           "url": "https://tailwindcss.com/"
         }
       ],
-      "image": "",
+      "image": "/bg-2.jpg",
       "url": ""
     }
   ]

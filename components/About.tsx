@@ -38,8 +38,8 @@ export function About() {
                 </div>
                 <button
                     className={classNames(
-                        'flex w-fit items-center gap-2 rounded-full border-2 border-white bg-white bg-opacity-10' +
-                            ' px-4 py-2'
+                        'flex w-fit items-center gap-2 rounded-full bg-white bg-opacity-10' +
+                            ' border-2 border-transparent px-4 py-2 hover:border-white hover:border-opacity-10'
                     )}
                 >
                     <Image
