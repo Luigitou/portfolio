@@ -48,9 +48,29 @@ export function Work() {
                                         target={'_blank'}
                                         rel={'noopener noreferrer'}
                                         className={
-                                            'flex items-end justify-between gap-3'
+                                            'flex items-center justify-between gap-3'
                                         }
                                     >
+                                        <div
+                                            className={
+                                                'flex h-full items-center justify-center'
+                                            }
+                                        >
+                                            {project.online ? (
+                                                <span
+                                                    className={
+                                                        'mt-2 aspect-square w-2 rounded-full bg-green'
+                                                    }
+                                                ></span>
+                                            ) : (
+                                                <span
+                                                    className={
+                                                        'mt-2 aspect-square w-2 rounded-full bg-red-500'
+                                                    }
+                                                ></span>
+                                            )}
+                                        </div>
+
                                         <h2
                                             className={classNames(
                                                 'relative text-4xl font-black hover:after:w-3/4 hover:after:opacity-100 ' +

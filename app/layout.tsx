@@ -3,7 +3,6 @@ import './globals.css';
 import classNames from 'classnames';
 import { AvailableForWork, Flare, Nav, Signature, Socials } from '@/components';
 import { jost } from '@/assets';
-import { ScrollController } from '@/tools';
 
 export const metadata: Metadata = {
     title: 'Louis Bellefemine',
@@ -30,33 +29,27 @@ export default function RootLayout({
                 )}
                 suppressHydrationWarning={true}
             >
-                <ScrollController>
-                    <div
-                        className={
-                            'fixed left-1/2 top-1/2 aspect-video w-6/12 transform' +
-                            ' -z-50 -translate-x-1/2 -translate-y-1/2 opacity-10'
-                        }
-                    >
-                        <Flare />
-                    </div>
-                    <header
-                        className={classNames(
-                            'fixed top-0 flex w-full grow-0 items-center justify-between px-6 py-4'
-                        )}
-                    >
-                        <Signature />
-                        <AvailableForWork />
-                    </header>
-                    <div
-                        className={
-                            'flex grow items-center justify-between px-6'
-                        }
-                    >
-                        <Socials />
-                        {children}
-                        <Nav />
-                    </div>
-                </ScrollController>
+                <div
+                    className={
+                        'fixed left-1/2 top-1/2 aspect-video w-6/12 transform' +
+                        ' -z-50 -translate-x-1/2 -translate-y-1/2 opacity-10'
+                    }
+                >
+                    <Flare />
+                </div>
+                <header
+                    className={classNames(
+                        'fixed top-0 flex w-full grow-0 items-center justify-between px-6 py-4'
+                    )}
+                >
+                    <Signature />
+                    <AvailableForWork />
+                </header>
+                <div className={'flex grow items-center justify-between px-6'}>
+                    <Socials />
+                    {children}
+                    <Nav />
+                </div>
             </body>
         </html>
     );

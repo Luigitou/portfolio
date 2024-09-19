@@ -1,7 +1,51 @@
+'use client';
+
 import classNames from 'classnames';
 import { jost } from '@/assets';
+import { useEffect, useState } from 'react';
 
 export function Nav() {
+    const [activeSection, setActiveSection] = useState<string | null>(null);
+
+    const handleScroll = (href: string) => {
+        const element = document.getElementById(href.slice(2));
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
+    const getActiveSection = () => {
+        const articles = document.querySelectorAll('article');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setActiveSection(entry.target.id);
+                }
+            });
+        }, observerOptions);
+
+        articles.forEach((article) => {
+            observer.observe(article);
+        });
+
+        return () => {
+            articles.forEach((article) => {
+                observer.unobserve(article);
+            });
+        };
+    };
+
+    useEffect(() => {
+        const activeSection = getActiveSection();
+    }, []);
+
     return (
         <div
             className={classNames(
@@ -11,13 +55,16 @@ export function Nav() {
         >
             {pages.map((page, index) => (
                 <a
-                    key={index}
-                    href={page.href}
-                    className={
-                        'rotate-90 opacity-50 transition-opacity duration-150 hover:opacity-100 hover:after:w-3/4 hover:after:opacity-100 ' +
-                        'after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-1/4 after:bg-white after:opacity-50 after:content-[""]' +
-                        'after:transition-all after:duration-300 after:ease-in-out'
-                    }
+                    key={page.href}
+                    onClick={() => handleScroll(page.href)}
+                    className={classNames(
+                        'rotate-90 cursor-pointer opacity-50 transition-opacity duration-150 hover:opacity-100 hover:after:w-3/4 hover:after:opacity-100 ' +
+                            'after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-1/4 after:bg-white after:opacity-50 after:content-[""]' +
+                            'after:transition-all after:duration-300 after:ease-in-out',
+                        activeSection === page.title.toLowerCase()
+                            ? 'opacity-100'
+                            : ''
+                    )}
                 >
                     {page.title}
                 </a>
