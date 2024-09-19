@@ -21,18 +21,18 @@ export function About() {
                 </h2>
                 <div className={'flex flex-col gap-6'}>
                     <p>
-                        I'm a freelance front-end developer based in Paris. I'm
-                        passionate about web development and I'm always looking
-                        for new challenges to push myself to the next level. I'm
-                        a self-taught developer and I'm always learning new
-                        things. I'm also a big fan of open-source projects and
-                        I'm always looking for ways to contribute to the
-                        community.
+                        I&apos;m a freelance front-end developer based in Paris.
+                        I&apos;m passionate about web development and I&apos;m
+                        always looking for new challenges to push myself to the
+                        next level. I&apos;m a self-taught developer and
+                        I&apos;m always learning new things. I&apos;m also a big
+                        fan of open-source projects and I&apos;m always looking
+                        for ways to contribute to the community.
                     </p>
                     <p>
-                        I'm currently working on a project called Kusodu, a
-                        modern multiplayer sudoku game. I'm excited to be able
-                        to contribute to this project and help make it even
+                        I&apos;m currently working on a project called Kusodu, a
+                        modern multiplayer sudoku game. I&apos;m excited to be
+                        able to contribute to this project and help make it even
                         better.
                     </p>
                 </div>

@@ -1,11 +1,11 @@
-import { Jost, Parisienne } from "next/font/google";
+import { Jost, Parisienne } from 'next/font/google';
 
 export const jost = Jost({
-    subsets: ["latin"],
+    subsets: ['latin']
 });
 
 export const parisienne = Parisienne({
-    subsets: ["latin"],
-    weight: "400",
-    style: "normal",
+    subsets: ['latin'],
+    weight: '400',
+    style: 'normal'
 });

@@ -15,8 +15,9 @@ export function Contact() {
             </h2>
             <div className={'flex flex-col gap-6'}>
                 <p>
-                    If you have any questions or feedback, please don't hesitate
-                    to reach out to me. I'm always happy to hear from you!
+                    If you have any questions or feedback, please don&apos;t
+                    hesitate to reach out to me. I&apos;m always happy to hear
+                    from you!
                 </p>
                 <p>You can reach me on any of the following platforms:</p>
                 <ul className={'list-disc pl-6'}>
