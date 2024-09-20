@@ -7,7 +7,7 @@ export function About() {
         <>
             <section
                 className={classNames(
-                    'flex h-full w-1/2 flex-col justify-center gap-12',
+                    'flex h-full w-1/2 flex-col justify-center gap-8',
                     jost.className
                 )}
             >
@@ -19,22 +19,44 @@ export function About() {
                 >
                     About Me.
                 </h2>
-                <div className={'flex flex-col gap-6'}>
+                <div className={'flex flex-col gap-4 leading-relaxed'}>
                     <p>
-                        I&apos;m a freelance front-end developer based in Paris.
-                        I&apos;m passionate about web development and I&apos;m
-                        always looking for new challenges to push myself to the
-                        next level. I&apos;m a self-taught developer and
-                        I&apos;m always learning new things. I&apos;m also a big
-                        fan of open-source projects and I&apos;m always looking
-                        for ways to contribute to the community.
+                        Hello everyone, <br />I am Louis Bellefemine, a
+                        <strong> freelance full-stack developer</strong>.
                     </p>
                     <p>
-                        I&apos;m currently working on a project called Kusodu, a
-                        modern multiplayer sudoku game. I&apos;m excited to be
-                        able to contribute to this project and help make it even
-                        better.
+                        With 4 years of experience at major companies such as
+                        <strong> Daimler Truck</strong> (Mercedes-Benz brand)
+                        and <strong> Stormshield</strong>, I have had the
+                        opportunity to work in complex environments with high
+                        expectations.
+                        <br />
+                        Over these years, I have progressed to take on
+                        increasing responsibilities, eventually becoming the
+                        <strong> front-end lead</strong> of the team I was part
+                        of.
                     </p>
+                    <p>
+                        Today, I aim to offer these skills to my clients and
+                        help them develop <strong>web applications</strong> that
+                        perfectly meet their needs.
+                        <br />
+                        I am now seeking new challenges to further refine my
+                        skills and explore new working environments.
+                        <br />
+                        If you&apos;re looking for a{' '}
+                        <strong>
+                            versatile, autonomous full-stack developer
+                        </strong>
+                        who can quickly <strong>adapt to any situation</strong>,
+                        don&apos;t hesitate to contact me via my Malt profile,
+                        LinkedIn, or by email.
+                    </p>
+                    <p>
+                        Thank you for taking the time to read, and I look
+                        forward to hearing from you.
+                    </p>
+                    <p>Louis</p>
                 </div>
                 <button
                     className={classNames(
