@@ -22,7 +22,12 @@ export function About() {
                 <div className={'flex flex-col gap-4 leading-relaxed'}>
                     <p>
                         Hello everyone, <br />I am Louis Bellefemine, a
-                        <strong> freelance full-stack developer</strong>.
+                        <strong> freelance full-stack developer</strong>{' '}
+                        specialized in{' '}
+                        <strong className={'italic'}>
+                            React, NestJS and TypeScript
+                        </strong>
+                        .
                     </p>
                     <p>
                         With 4 years of experience at major companies such as
