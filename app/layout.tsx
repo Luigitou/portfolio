@@ -30,7 +30,7 @@ export default function RootLayout({
         <html lang="en">
             <body
                 className={classNames(
-                    'relative flex h-screen w-screen flex-col bg-background',
+                    'relative flex w-screen flex-col bg-background',
                     jost.className,
                     afterNoiseBackground
                 )}

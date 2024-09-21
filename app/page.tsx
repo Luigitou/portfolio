@@ -5,27 +5,24 @@ import { About, Landing, Work } from '@/components';
 export default function Home() {
     return (
         <main
-            className={classNames(
-                jost.className,
-                'h-screen w-screen text-white'
-            )}
+            className={classNames(jost.className, 'w-screen text-white')}
             id={'auto-scroll'}
         >
             <article
                 id={'home'}
-                className={'flex h-full flex-col items-center justify-center'}
+                className={'flex h-dvh flex-col items-center justify-center'}
             >
                 <Landing />
             </article>
             <article
                 id={'work'}
-                className={'flex h-full w-full items-center justify-center'}
+                className={'flex h-dvh w-full items-center justify-center'}
             >
                 <Work />
             </article>
             <article
                 id={'about'}
-                className={'flex h-full w-full items-center justify-center'}
+                className={'flex h-dvh w-full items-center justify-center'}
             >
                 <About />
             </article>

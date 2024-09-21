@@ -56,27 +56,33 @@ export function Nav() {
 
     return (
         <div
-            className={classNames(
-                'top-1/8 fixed right-0 flex h-3/4 w-20 flex-col items-center justify-center gap-32 border-l-[1px] border-white border-opacity-50 text-sm text-white',
-                jost.className
-            )}
+            className={
+                'fixed right-0 top-0 flex h-dvh w-20 flex-col items-center justify-center'
+            }
         >
-            {pages.map((page, index) => (
-                <a
-                    key={page.href}
-                    onClick={() => handleScroll(page.href)}
-                    className={classNames(
-                        'rotate-90 cursor-pointer transition-opacity duration-150 hover:opacity-100 hover:after:w-3/4 hover:after:opacity-100 ' +
-                            'after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-1/4 after:bg-white after:opacity-50 after:content-[""]' +
-                            ' after:transition-all after:duration-300 after:ease-in-out',
-                        activeSection === page.title.toLowerCase()
-                            ? 'opacity-100'
-                            : 'opacity-50'
-                    )}
-                >
-                    {page.title}
-                </a>
-            ))}
+            <div
+                className={classNames(
+                    'flex h-3/4 flex-col items-center justify-center gap-32 border-l-[1px] border-white border-opacity-50 text-sm text-white',
+                    jost.className
+                )}
+            >
+                {pages.map((page, index) => (
+                    <a
+                        key={page.href}
+                        onClick={() => handleScroll(page.href)}
+                        className={classNames(
+                            'rotate-90 cursor-pointer transition-opacity duration-150 hover:opacity-100 hover:after:w-3/4 hover:after:opacity-100 ' +
+                                'after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-1/4 after:bg-white after:opacity-50 after:content-[""]' +
+                                ' after:transition-all after:duration-300 after:ease-in-out',
+                            activeSection === page.title.toLowerCase()
+                                ? 'opacity-100'
+                                : 'opacity-50'
+                        )}
+                    >
+                        {page.title}
+                    </a>
+                ))}
+            </div>
         </div>
     );
 }
