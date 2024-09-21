@@ -11,6 +11,14 @@ export function Work() {
     const [newActiveProject, setNewActiveProject] = useState(0);
     const firstUpdate = useRef(true);
 
+    /*const isMobileTouchDevice = () => {
+        const userAgent = navigator.userAgent;
+
+        return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
+            userAgent
+        );
+    };*/
+
     const handleNextProject = () => {
         if (isAnimating) {
             return;
@@ -53,19 +61,11 @@ export function Work() {
 
     return (
         <>
-            <div
-                className={
-                    'relative flex h-full w-1/2 flex-col items-center justify-center gap-16'
-                }
-            >
-                <section
-                    className={
-                        'flex h-full w-full flex-col justify-center gap-2'
-                    }
-                >
+            <div className="relative flex h-full w-11/12 flex-col items-center justify-center gap-8 xl:w-8/12 2xl:w-7/12">
+                <section className="flex h-full w-full flex-col justify-center gap-4">
                     <span
                         className={classNames(
-                            'flex items-end justify-between',
+                            'flex flex-col items-start justify-between md:flex-row md:items-end',
                             firstUpdate.current
                                 ? null
                                 : isAnimating
@@ -75,75 +75,53 @@ export function Work() {
                     >
                         <a
                             href={config.PROJECTS[newActiveProject].url}
-                            target={'_blank'}
-                            rel={'noopener noreferrer'}
-                            className={
-                                'flex items-center justify-between gap-3'
-                            }
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-3"
                         >
-                            <div
-                                className={
-                                    'flex h-full items-center justify-center'
-                                }
-                            >
+                            <div className="flex h-full items-center justify-center">
                                 {config.PROJECTS[newActiveProject].online ? (
-                                    <span
-                                        className={
-                                            'mt-2 aspect-square w-2 rounded-full bg-green'
-                                        }
-                                    ></span>
+                                    <span className="mt-2 aspect-square w-2 rounded-full bg-green"></span>
                                 ) : (
-                                    <span
-                                        className={
-                                            'mt-2 aspect-square w-2 rounded-full bg-red-500'
-                                        }
-                                    ></span>
+                                    <span className="mt-2 aspect-square w-2 rounded-full bg-red-500"></span>
                                 )}
                             </div>
 
                             <h2
                                 className={classNames(
-                                    'relative text-4xl font-black hover:after:w-3/4 hover:after:opacity-100 ' +
-                                        'after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-1/4 after:bg-white after:opacity-50 after:content-[""]' +
-                                        ' after:transition-all after:duration-300 after:ease-in-out'
+                                    'relative text-2xl font-black hover:after:w-3/4 hover:after:opacity-100 sm:text-3xl md:text-4xl',
+                                    'after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-1/4 after:bg-white after:opacity-50 after:content-[""]',
+                                    'after:transition-all after:duration-300 after:ease-in-out'
                                 )}
                             >
                                 {config.PROJECTS[newActiveProject].name}.
                             </h2>
                         </a>
-                        <p className={classNames('text-xl italic')}>
+                        <p className="mt-2 text-base italic sm:text-lg md:mt-0 md:text-xl">
                             {config.PROJECTS[newActiveProject].description}
                         </p>
                     </span>
-                    <div
-                        className={classNames(
-                            'no-wrap flex aspect-video w-full overflow-hidden rounded-xl'
-                        )}
-                    >
-                        {config.PROJECTS.map((project, index) => {
-                            return (
-                                <div
-                                    key={index}
-                                    className={classNames(
-                                        'relative aspect-video w-[100%] flex-shrink-0 transition-transform duration-700 ease-out'
-                                    )}
-                                    style={{
-                                        transform: `translateX(-${100 * activeProject}%)`
-                                    }}
-                                >
-                                    <Image
-                                        src={project.image}
-                                        alt={`${project.name} background`}
-                                        layout={'fill'}
-                                        objectFit={'cover'}
-                                    />
-                                </div>
-                            );
-                        })}
+                    <div className="mt-4 flex aspect-video w-full overflow-hidden rounded-xl">
+                        {config.PROJECTS.map((project, index) => (
+                            <div
+                                key={index}
+                                className="relative aspect-video w-full flex-shrink-0 transition-transform duration-700 ease-out"
+                                style={{
+                                    transform: `translateX(-${100 * activeProject}%)`
+                                }}
+                            >
+                                <Image
+                                    src={project.image}
+                                    alt={`${project.name} background`}
+                                    layout="fill"
+                                    objectFit="cover"
+                                />
+                            </div>
+                        ))}
                     </div>
                     <div
                         className={classNames(
-                            'mt-5 flex items-center justify-center gap-4',
+                            'mt-5 flex flex-wrap items-center justify-center gap-2',
                             firstUpdate.current
                                 ? null
                                 : isAnimating
@@ -152,89 +130,67 @@ export function Work() {
                         )}
                     >
                         {config.PROJECTS[newActiveProject].techs.map(
-                            (tech, index) => {
-                                return (
-                                    <a
-                                        href={tech.url}
-                                        target={'_blank'}
-                                        rel={'noopener noreferrer'}
-                                        key={index}
-                                        className={
-                                            'flex items-center justify-center gap-2 rounded-full bg-white' +
-                                            ' border-2 border-transparent bg-opacity-10 px-3 py-1 text-sm' +
-                                            ' hover:border-white hover:border-opacity-10'
-                                        }
-                                    >
-                                        <Image
-                                            src={tech.icon}
-                                            alt={`${tech.name} icon`}
-                                            width={'25'}
-                                            height={40}
-                                        />
-                                        {tech.name}
-                                    </a>
-                                );
-                            }
+                            (tech, index) => (
+                                <a
+                                    href={tech.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    key={index}
+                                    className="flex items-center justify-center gap-2 rounded-full border-2 border-transparent bg-white bg-opacity-10 px-3 py-1 text-xs hover:border-white hover:border-opacity-10 sm:text-sm"
+                                >
+                                    <Image
+                                        src={tech.icon}
+                                        alt={`${tech.name} icon`}
+                                        width={20}
+                                        height={20}
+                                    />
+                                    {tech.name}
+                                </a>
+                            )
                         )}
                     </div>
                 </section>
 
-                <div
-                    className={
-                        'left-50 absolute bottom-6 flex items-center justify-center'
-                    }
-                >
+                <div className="absolute bottom-6 left-0 right-0 flex items-center justify-center gap-4">
                     <button
-                        className={
-                            'cursor-pointer opacity-50 transition-opacity duration-150 ease-in hover:opacity-100'
-                        }
+                        className="cursor-pointer opacity-50 transition-opacity duration-150 ease-in hover:opacity-100"
                         onClick={handlePreviousProject}
                     >
                         <Image
-                            src={'/caret.svg'}
-                            alt={'previous projet'}
-                            width={70}
-                            height={50}
+                            src="/caret.svg"
+                            alt="previous project"
+                            width={30}
+                            height={20}
                         />
                     </button>
-                    <div
-                        className={
-                            'flex w-1/2 items-center justify-center gap-[35px]'
-                        }
-                    >
-                        {config.PROJECTS.map((project, index) => {
-                            return (
-                                <button
-                                    key={index}
-                                    className={classNames(
-                                        'aspect-square h-3 rounded-full border-[1px] border-white',
-                                        index === activeProject
-                                            ? 'bg-white'
-                                            : 'opacity-50',
-                                        'cursor-pointer transition-all duration-150 ease-in-out',
-                                        index !== activeProject
-                                            ? 'hover:bg-white hover:opacity-50'
-                                            : ''
-                                    )}
-                                    onClick={() => {
-                                        setActiveProject(index);
-                                    }}
-                                ></button>
-                            );
-                        })}
+                    <div className="flex items-center justify-center gap-2 md:gap-[35px]">
+                        {config.PROJECTS.map((project, index) => (
+                            <button
+                                key={index}
+                                className={classNames(
+                                    'aspect-square h-2 rounded-full border border-white md:h-3',
+                                    index === activeProject
+                                        ? 'bg-white'
+                                        : 'opacity-50',
+                                    'cursor-pointer transition-all duration-150 ease-in-out',
+                                    index !== activeProject
+                                        ? 'hover:bg-white hover:opacity-50'
+                                        : ''
+                                )}
+                                onClick={() => setActiveProject(index)}
+                            ></button>
+                        ))}
                     </div>
                     <button
-                        className={
-                            'cursor-pointer opacity-50 transition-opacity duration-150 ease-in hover:opacity-100'
-                        }
+                        className="cursor-pointer opacity-50 transition-opacity duration-150 ease-in hover:opacity-100"
                         onClick={handleNextProject}
                     >
                         <Image
-                            src={'/caret.svg'}
-                            alt={'previous projet'}
-                            width={70}
-                            height={50}
-                            className={'rotate-180'}
+                            src="/caret.svg"
+                            alt="next project"
+                            width={30}
+                            height={20}
+                            className="rotate-180"
                         />
                     </button>
                 </div>
