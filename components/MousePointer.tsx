@@ -13,6 +13,14 @@ export function MousePointer() {
         return start + (end - start) * factor;
     };
 
+    const isMobileTouchDevice = () => {
+        const userAgent = navigator.userAgent;
+
+        return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
+            userAgent
+        );
+    };
+
     useEffect(() => {
         const handleMouseMove = (event: MouseEvent) => {
             mousePosition.current.x = event.clientX;
@@ -77,17 +85,21 @@ export function MousePointer() {
         };
     }, []);
 
-    return (
-        <span
-            id="custom-cursor"
-            className="pointer-events-none fixed left-0 top-0 z-50 aspect-square h-5 w-5 rounded-full border-[2px] border-white border-opacity-25"
-        >
+    if (isMobileTouchDevice()) {
+        return null;
+    } else {
+        return (
             <span
-                className={classNames(
-                    'absolute left-1/2 top-1/2 aspect-square w-full translate-x-[-50%] translate-y-[-50%] rounded-full bg-white opacity-25 transition-transform duration-150 ease-in-out',
-                    isClickable ? 'scale-100' : 'scale-[0.25]' // Animation de mise à l'échelle si cliquable
-                )}
-            ></span>
-        </span>
-    );
+                id="custom-cursor"
+                className="pointer-events-none fixed left-0 top-0 z-50 aspect-square h-5 w-5 rounded-full border-[2px] border-white border-opacity-25"
+            >
+                <span
+                    className={classNames(
+                        'absolute left-1/2 top-1/2 aspect-square w-full translate-x-[-50%] translate-y-[-50%] rounded-full bg-white opacity-25 transition-transform duration-150 ease-in-out',
+                        isClickable ? 'scale-100' : 'scale-[0.25]' // Animation de mise à l'échelle si cliquable
+                    )}
+                ></span>
+            </span>
+        );
+    }
 }
