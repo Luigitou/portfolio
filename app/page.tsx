@@ -22,7 +22,7 @@ export default function Home() {
             </article>
             <article
                 id={'about'}
-                className={'flex h-dvh w-full items-center justify-center'}
+                className={'flex min-h-dvh w-full items-center justify-center'}
             >
                 <About />
             </article>

@@ -9,7 +9,7 @@ export function About() {
         <>
             <section
                 className={classNames(
-                    'mx-auto flex w-11/12 flex-col justify-center gap-6 sm:w-10/12 md:w-3/4 lg:w-2/3 xl:w-1/2',
+                    'mx-auto mt-16 flex w-11/12 flex-col justify-center gap-6 sm:w-10/12 md:w-3/4 lg:w-2/3 xl:w-1/2',
                     jost.className
                 )}
             >
@@ -69,7 +69,7 @@ export function About() {
                         If you&apos;re looking for a{' '}
                         <strong className="font-semibold">
                             versatile, autonomous full-stack developer
-                        </strong>
+                        </strong>{' '}
                         who can quickly{' '}
                         <strong className="font-semibold">
                             adapt to any situation

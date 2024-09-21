@@ -3,7 +3,7 @@ import Image from 'next/image';
 export function Landing() {
     return (
         <>
-            <section className="flex h-full flex-col justify-center gap-3">
+            <section className="mt-16 flex h-full flex-col justify-center gap-3">
                 <span className="text-center text-2xl font-light italic sm:text-3xl md:text-4xl xl:pl-64 xl:text-left">
                     Hey !
                 </span>

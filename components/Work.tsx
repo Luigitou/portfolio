@@ -151,7 +151,7 @@ export function Work() {
                     </div>
                 </section>
 
-                <div className="absolute bottom-6 left-0 right-0 flex items-center justify-center gap-4">
+                <div className="absolute bottom-6 left-0 right-0 flex items-center justify-center gap-2">
                     <button
                         className="cursor-pointer opacity-50 transition-opacity duration-150 ease-in hover:opacity-100"
                         onClick={handlePreviousProject}
@@ -159,16 +159,18 @@ export function Work() {
                         <Image
                             src="/caret.svg"
                             alt="previous project"
-                            width={30}
+                            width={50}
                             height={20}
                         />
                     </button>
-                    <div className="flex items-center justify-center gap-2 md:gap-[35px]">
-                        {config.PROJECTS.map((project, index) => (
+                    {config.PROJECTS.map((project, index) => (
+                        <div
+                            key={index}
+                            className={'flex w-12 items-center justify-center'}
+                        >
                             <button
-                                key={index}
                                 className={classNames(
-                                    'aspect-square h-2 rounded-full border border-white md:h-3',
+                                    'aspect-square h-3 rounded-full border border-white',
                                     index === activeProject
                                         ? 'bg-white'
                                         : 'opacity-50',
@@ -179,8 +181,8 @@ export function Work() {
                                 )}
                                 onClick={() => setActiveProject(index)}
                             ></button>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                     <button
                         className="cursor-pointer opacity-50 transition-opacity duration-150 ease-in hover:opacity-100"
                         onClick={handleNextProject}
@@ -188,7 +190,7 @@ export function Work() {
                         <Image
                             src="/caret.svg"
                             alt="next project"
-                            width={30}
+                            width={50}
                             height={20}
                             className="rotate-180"
                         />
