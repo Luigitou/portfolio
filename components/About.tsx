@@ -5,6 +5,21 @@ import { jost } from '@/assets';
 import Image from 'next/image';
 
 export function About() {
+    const downloadFile = (filePath: string = '/CV.pdf') => {
+        const link = document.createElement('a');
+        link.href = filePath;
+        const fileName = filePath.split('/').pop();
+        if (!fileName) {
+            return;
+        }
+        link.download = fileName;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return (
         <>
             <section
@@ -89,6 +104,7 @@ export function About() {
                             'border-2 border-transparent px-4 py-2 transition-colors duration-300 hover:border-white hover:border-opacity-10',
                         'md:text-md mb-4 text-sm sm:text-base'
                     )}
+                    onClick={() => downloadFile('/CV.pdf')}
                 >
                     <Image
                         src={'/download.svg'}
