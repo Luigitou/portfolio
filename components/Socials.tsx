@@ -7,7 +7,7 @@ export function Socials() {
     return (
         <div
             className={
-                'fixed top-0 hidden h-full flex-col items-center justify-center gap-12 lg:flex'
+                'fixed top-0 hidden h-full flex-col items-center justify-center gap-12 xl:flex'
             }
         >
             {socials.map((social, index) => (

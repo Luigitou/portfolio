@@ -57,7 +57,7 @@ export function Nav() {
     return (
         <div
             className={
-                'fixed right-0 top-0 hidden h-dvh w-20 flex-col items-center justify-center lg:flex'
+                'fixed right-0 top-0 hidden h-dvh w-20 flex-col items-center justify-center xl:flex'
             }
         >
             <div
