@@ -1,24 +1,18 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
+import { MobileContext } from '@/components/MobileProvider';
 
 export function MousePointer() {
     const mousePosition = useRef({ x: 0, y: 0 });
     const cursorPosition = useRef({ x: 0, y: 0 });
     const requestRef = useRef<number | null>(null);
-    const [isClickable, setIsClickable] = useState(false); // Utilisation de useState pour gérer la cliquabilité
+    const [isClickable, setIsClickable] = useState(false);
+    const isMobileDevice = useContext(MobileContext);
 
     const lerp = (start: number, end: number, factor: number) => {
         return start + (end - start) * factor;
-    };
-
-    const isMobileTouchDevice = () => {
-        const userAgent = navigator.userAgent;
-
-        return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
-            userAgent
-        );
     };
 
     useEffect(() => {
@@ -26,21 +20,17 @@ export function MousePointer() {
             mousePosition.current.x = event.clientX;
             mousePosition.current.y = event.clientY;
 
-            // Récupère l'élément sous la souris
             let elementUnderCursor = document.elementFromPoint(
                 event.clientX,
                 event.clientY
             );
 
             if (elementUnderCursor) {
-                // Remonte dans le DOM si l'élément n'est pas cliquable directement
                 elementUnderCursor = elementUnderCursor.closest(
                     'a, button, [role="button"]'
                 );
-                // Met à jour l'état pour savoir si l'élément sous la souris est cliquable
                 setIsClickable(!!elementUnderCursor);
             } else {
-                // Si aucun élément cliquable n'est trouvé, on désactive l'état cliquable
                 setIsClickable(false);
             }
         };
@@ -85,7 +75,7 @@ export function MousePointer() {
         };
     }, []);
 
-    if (isMobileTouchDevice()) {
+    if (isMobileDevice) {
         return null;
     } else {
         return (
